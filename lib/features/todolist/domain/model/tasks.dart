@@ -3,7 +3,7 @@ import 'package:uuid/uuid.dart';
 import 'package:bloc_todo_list/features/todolist/domain/model/task_state.dart';
 
 class Task {
-  final Uuid id;
+  final String id;
   final String title;
   final DateTime date;
   final String description;
@@ -14,11 +14,11 @@ class Task {
     required this.title,
     required this.date,
     required this.description,
-    required this.state,
+    this.state = TaskState.pending,
   });
 
   Task copyWith({
-    Uuid? id,
+    String? id,
     String? title,
     DateTime? date,
     String? description,
