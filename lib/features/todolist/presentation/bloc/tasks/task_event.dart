@@ -9,9 +9,24 @@ class AddTaskEvent extends TaskEvent {
   AddTaskEvent(this.newTask);
 }
 
-
 class DeleteTaskEvent extends TaskEvent {
   final String id;
 
   DeleteTaskEvent(this.id);
+}
+
+class UpdateTaskEvent extends TaskEvent {
+  final String id;
+  final String? title;
+  final DateTime? date;
+  final String? description;
+  final TaskStatus? status;
+
+  UpdateTaskEvent(
+    this.id, {
+    this.title,
+    this.date,
+    this.description,
+    this.status,
+  });
 }

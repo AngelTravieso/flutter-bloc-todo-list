@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:bloc_todo_list/features/todolist/domain/model/task_state.dart'
+import 'package:bloc_todo_list/features/todolist/domain/model/task_status.dart'
     as state;
 
 class HomePage extends StatelessWidget {
@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
             final task = taskBloc.state.tasks[index];
             Color taskColor = Colors.yellow;
 
-            if (task.state.name == state.TaskState.completed.name) {
+            if (task.status.name == state.TaskStatus.completed.name) {
               taskColor = Colors.greenAccent;
             }
 

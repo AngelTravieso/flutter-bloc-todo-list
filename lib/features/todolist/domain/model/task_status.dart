@@ -1,4 +1,4 @@
-enum TaskState {
+enum TaskStatus {
   completed,
   failed,
   pending
