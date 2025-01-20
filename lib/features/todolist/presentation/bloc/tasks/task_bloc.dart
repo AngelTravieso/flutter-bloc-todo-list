@@ -12,5 +12,11 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
       final newState = List<Task>.from(state.tasks)..add(event.newTask);
       emit(UserSetTask(newState));
     });
+    on<DeleteTaskEvent>((event, emit) {
+      final newState =
+          state.tasks.where((task) => task.id != event.id).toList();
+
+      emit(UserSetTask(newState));
+    });
   }
 }

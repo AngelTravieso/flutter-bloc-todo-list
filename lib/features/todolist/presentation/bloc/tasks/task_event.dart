@@ -8,3 +8,10 @@ class AddTaskEvent extends TaskEvent {
 
   AddTaskEvent(this.newTask);
 }
+
+
+class DeleteTaskEvent extends TaskEvent {
+  final String id;
+
+  DeleteTaskEvent(this.id);
+}
